@@ -84,7 +84,8 @@ export default function Canvas () {
     const eraseCanvas = () => {
       if(!canvasRef.current) return;
       const ctx = canvasRef.current.getContext("2d") as CanvasRenderingContext2D;
-      clearCanvasRect(ctx);
+      ctx.reset();
+      // clearCanvasRect(ctx);
     }
 
     const drawLines = (ctx: CanvasRenderingContext2D, {lineSpace, width, height}:{lineSpace:number; width:number; height:number;}) => {
